@@ -66,7 +66,7 @@ class StreamlitChatPack(BaseLlamaPack):
             f"{self.page}"
         )
         st.info(
-            f"Explore Snowflake views with this AI-powered app. Pose any question and receive exact SQL queries.",
+            f"Pose any question and receive exact SQL queries.",
             icon="ℹ️",
         )
 
@@ -144,7 +144,7 @@ class StreamlitChatPack(BaseLlamaPack):
         if st.session_state["messages"][-1]["role"] != "assistant":
             with st.spinner():
                 with st.chat_message("assistant"):
-                    response = st.session_state["query_engine"].query("User Question:"+prompt+". ")
+                    response = st.session_state["query_engine"].query("User Question:"+"Use SQLite syntax for building SQL query:"+prompt+". ")
                     sql_query = f"```sql\n{response.metadata['sql_query']}\n```\n**Response:**\n{response.response}\n"
                     response_container = st.empty()
                     response_container.write(sql_query)
