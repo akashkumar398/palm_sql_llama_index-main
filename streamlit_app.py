@@ -104,7 +104,7 @@ class StreamlitChatPack(BaseLlamaPack):
 
         # Get list of tables in the database
         table_names = inspector.get_table_names()
-        db_file = 'ecommerce_platform1.db'
+        db_file = 'test_db.db'
         st.sidebar.markdown(f"### Database: {db_file}")
         # Sidebar selection for tables
         selected_table = st.sidebar.selectbox("Select a Table", table_names)
