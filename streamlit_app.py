@@ -84,7 +84,7 @@ class StreamlitChatPack(BaseLlamaPack):
         @st.cache_resource # Replaced New - AJ
         def load_db_llm():
             # Load the SQLite database
-            engine = create_engine("sqlite:///ecommerce_platform1.db")
+            engine = create_engine("sqlite:///test_db.db")
             sql_database = SQLDatabase(engine)
         
             # Initialize PaLM
